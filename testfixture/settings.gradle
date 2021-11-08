@@ -1,0 +1,3 @@
+rootProject.name = 'testfixture'
+include 'management-core'
+
