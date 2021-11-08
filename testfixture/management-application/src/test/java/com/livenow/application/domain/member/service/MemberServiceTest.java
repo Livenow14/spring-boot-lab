@@ -4,8 +4,8 @@ import com.livenow.application.config.ApplicationConfig;
 import com.livenow.application.domain.member.dto.MemberDto;
 import com.livenow.application.domain.member.repository.MemberRepository;
 import com.livenow.core.domain.member.Member;
+import com.livenow.core.domain.member.MemberFixture;
 import com.livenow.core.domain.member.MemberRank;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @EnableAutoConfiguration
 @SpringBootTest(classes = ApplicationConfig.class)

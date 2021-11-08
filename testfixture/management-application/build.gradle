@@ -3,5 +3,6 @@ jar { enabled = true }
 
 dependencies {
     implementation(project(":management-core"))
+    testImplementation(testFixtures(project(":management-core")))
     implementation 'org.springframework.boot:spring-boot-starter'
 }

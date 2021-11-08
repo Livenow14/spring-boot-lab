@@ -1,7 +1,4 @@
-package com.livenow.application.domain.member.service;
-
-import com.livenow.core.domain.member.Member;
-import com.livenow.core.domain.member.MemberRank;
+package com.livenow.core.domain.member;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +9,7 @@ public class MemberFixture {
         return Member.builder()
                 .name(name)
                 .memberRank(memberRank)
+                .joinDate(now)
                 .build();
     }
 }

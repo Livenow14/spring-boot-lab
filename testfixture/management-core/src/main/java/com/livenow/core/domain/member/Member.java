@@ -35,7 +35,7 @@ public class Member {
         if (this.memberRank.isCeo()) {
             throw new IllegalStateException("사장님은 진급할 수 없어요!");
         }
-        if (!this.memberRank.isHigherThan(promotionRole)) {
+        if (this.memberRank.isHigherThan(promotionRole)) {
             throw new IllegalStateException("높은 직급으로만 진급할 수 있어요!");
         }
         this.memberRank = promotionRole;
