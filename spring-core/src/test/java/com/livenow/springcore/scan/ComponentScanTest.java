@@ -9,9 +9,9 @@ import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class MemberFieldService {
+public class ComponentScanTest {
     /**
-     * TODO: core > scan 패키지 내에 있는 클래스를 스프링 빈으로 등록하기
+     * TODO: springcore > scan 패키지 내에 있는 클래스를 스프링 빈으로 등록하기
      */
     @Test
     void componentScan() {
