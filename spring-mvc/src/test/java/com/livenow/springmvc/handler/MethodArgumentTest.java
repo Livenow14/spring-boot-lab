@@ -43,7 +43,26 @@ public class MethodArgumentTest {
     }
 
     /**
-     * MethodArgumentController > requestParam 메서드
+     * MethodArgumentController > modelAttribute 메서드
+     * > @ModelAttribute 활용하여 메서드 파라미터로 활용하기
+     * > 생략이 가능하다는 점도 함께 알아보기
+     */
+    @DisplayName("Method Arguments - @ModelAttribute")
+    @Test
+    void ModelAttribute() {
+        String name = "hello";
+        String email = "email";
+        RestAssured.given().log().all()
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .when().get("/method-argument/users/model-attribute?name={name}&email={email}", name, email)
+                .then().log().all()
+                .statusCode(HttpStatus.OK.value())
+                .body("size()", is(2))
+                .body("[0].name", is(name));
+    }
+
+    /**
+     * MethodArgumentController > requestBody 메서드
      * > @RequestBody 활용하여 메서드 파라미터로 활용하기
      * > 로그 창에서 http request의 body 값을 확인하기
      */
