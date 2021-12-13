@@ -55,6 +55,21 @@ public class ReturnValueTest {
     }
 
     /**
+     * ReturnValueController > responseStatusForUser 메서드
+     */
+    @DisplayName("Return Value - ResponseStatus User")
+    @Test
+    void responseStatusForUser() {
+        RestAssured.given().log().all()
+                .accept(MediaType.APPLICATION_JSON_VALUE)
+                .when().get("/return-value/users/created")
+                .then().log().all()
+                .statusCode(HttpStatus.CREATED.value())
+                .body("name", is("name"))
+                .body("email", is("email"));
+    }
+
+    /**
      * ReturnValueController > responseEntity 메서드
      */
     @DisplayName("Return Value - ResponseEntity")
