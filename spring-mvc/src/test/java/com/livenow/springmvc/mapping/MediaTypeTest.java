@@ -53,19 +53,19 @@ public class MediaTypeTest {
     @Test
     void showUser() {
         RestAssured.given().log().all()
-                .accept(MediaType.TEXT_HTML_VALUE)
-                .when().get("/media-type/users")
-                .then().log().all()
-                .statusCode(HttpStatus.OK.value())
-                .contentType(MediaType.TEXT_HTML_VALUE)
-                .body(containsString("user page"));
-
-        RestAssured.given().log().all()
                 .accept(MediaType.APPLICATION_JSON_VALUE)
                 .when().get("/media-type/users")
                 .then().log().all()
                 .statusCode(HttpStatus.OK.value())
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .body("size()", is(2));
+
+        RestAssured.given().log().all()
+                .accept(MediaType.TEXT_HTML_VALUE)
+                .when().get("/media-type/users")
+                .then().log().all()
+                .statusCode(HttpStatus.OK.value())
+                .contentType(MediaType.TEXT_HTML_VALUE)
+                .body(containsString("user page"));
     }
 }
