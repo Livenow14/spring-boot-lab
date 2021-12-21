@@ -42,6 +42,7 @@ public class UriPatternTest {
     /**
      * UriPatternController > pattern 메서드
      * > 각 요청을 하나의 메서드로 처리하기
+     * 패턴에 맞는 uri만 허용한다.
      */
     @DisplayName("Uri Pattern - pattern")
     @Test
