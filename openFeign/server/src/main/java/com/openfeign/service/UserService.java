@@ -24,6 +24,12 @@ public class UserService {
     return new UserDto(user.getId(), user.getName());
   }
 
+  public List<UserDto> getAll() {
+    return DB.values().stream()
+        .map(user -> new UserDto(user.getId(), user.getName()))
+        .collect(Collectors.toList());
+  }
+
   public void update(Long userId, String name) {
     User user = DB.get(userId);
     if (Objects.isNull(user)) {
@@ -32,9 +38,7 @@ public class UserService {
     user.changeName(name);
   }
 
-  public List<UserDto> getAll() {
-    return DB.values().stream()
-        .map(user -> new UserDto(user.getId(), user.getName()))
-        .collect(Collectors.toList());
+  public void delete(Long userId) {
+    DB.remove(userId);
   }
 }

@@ -7,4 +7,4 @@ GET http://localhost:7777/server/v1/users
 ###
 PUT http://localhost:7777/server/v1/users/1?name=사실 바이임
 ###
-GET http://localhost:7777/server/v1/users
+DELETE http://localhost:7777/server/v1/users/1
