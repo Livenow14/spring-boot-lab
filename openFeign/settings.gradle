@@ -1,0 +1,5 @@
+rootProject.name = 'openFeign'
+include 'client'
+include 'server'
+include 'user'
+
