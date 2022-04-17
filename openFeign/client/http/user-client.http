@@ -3,3 +3,7 @@ POST http://localhost:8080/client/v1/users?name=하이하이
 POST http://localhost:8080/client/v1/users?name=하이하이2
 ###
 GET http://localhost:8080/client/v1/users
+###
+GET http://localhost:8080/client/v1/users/error
+
+

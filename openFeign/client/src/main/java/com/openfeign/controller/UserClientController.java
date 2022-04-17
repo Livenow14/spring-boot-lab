@@ -1,6 +1,7 @@
 package com.openfeign.controller;
 
 
+import com.openfeign.data.dto.EmptyResponse;
 import com.openfeign.data.dto.UserDto;
 import com.openfeign.service.UserClientService;
 import java.util.List;
@@ -25,5 +26,11 @@ public class UserClientController {
   @GetMapping
   public List<UserDto> getAll() {
     return userClientService.getAll();
+  }
+
+  @GetMapping("/error")
+  public EmptyResponse error() {
+    userClientService.error();
+    return EmptyResponse.INSTANCE;
   }
 }

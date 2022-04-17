@@ -1,5 +1,6 @@
 package com.openfeign.controller;
 
+import com.openfeign.data.dto.EmptyResponse;
 import com.openfeign.data.dto.UserDto;
 import com.openfeign.service.UserService;
 import java.util.List;
@@ -42,4 +43,11 @@ public class UserController {
   public void update(@PathVariable Long userId) {
     service.delete(userId);
   }
+
+  @GetMapping("/error")
+  public EmptyResponse error() {
+    service.error();
+    return EmptyResponse.INSTANCE;
+  }
+
 }

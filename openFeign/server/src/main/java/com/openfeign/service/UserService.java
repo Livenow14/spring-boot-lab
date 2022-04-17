@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class UserService {
 
   private static final Map<Long, User> DB = new ConcurrentHashMap<>();
@@ -40,5 +42,10 @@ public class UserService {
 
   public void delete(Long userId) {
     DB.remove(userId);
+  }
+
+  public void error() {
+    log.info("에러다다당");
+    throw new IllegalStateException("에러에러");
   }
 }
